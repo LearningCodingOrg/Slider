@@ -1,9 +1,9 @@
 const pictureArr = ['bicycle1-640.jpg', 'bicycle2-640.jpg', 'bicycle3-640.jpg', 'bicycle4-640.jpg', 'bicycle5-640.jpg', 'bicycle6-640.jpg', 'bicycle7-640.jpg', 'bicycle8-640.jpg', 'bicycle9-640.jpg', 'bicycle10-640.jpg', 'bicycle11-640.jpg', ];
 let photoNr = 0;
-const classNames = ['fa-arrow-circle-left', 'fa-angle-left'];
+const classNames = ['btnLeft', 'btnA-L'];
 
-const circleArrows = document.querySelectorAll('.circleArrow');
-const angleArrows = document.querySelectorAll('.angleArrow')
+const circleArrows = document.querySelectorAll('.btnCircleArrow');
+const angleArrows = document.querySelectorAll('.btnAngle')
 const mainPhoto = document.querySelector('.mainPhoto img');
 const currentDisplay = document.querySelector('.currentDisplay');
 const prevMiniature = document.querySelector('.prevMin');
@@ -32,29 +32,37 @@ function changePhotoByArrow() {
 
 function changePhotoByKey(e) {
     if (e.keyCode === 39) {
-        photoNr++;
-        checkEndArr();
+        if (photoNr !== pictureArr.length - 1) {
+            photoNr++;
+        }
+        checkEndArr()
     } else if (e.keyCode === 37) {
-        photoNr--;
-        checkEndArr();
+        if (photoNr !== 0) {
+            photoNr--;
+        }
+        checkEndArr()
     }
     update()
 }
 
 function checkEndArr() {
-    if (photoNr <= 0) {
-        photoNr = 0;
+    if (photoNr === 0) {
         circleArrows[0].classList.add('opacity');
+        circleArrows[0].setAttribute('disabled', 'true');
         angleArrows[0].classList.add('opacity');
+        angleArrows[0].setAttribute('disabled', 'true');
         prevMiniature.parentElement.classList.add('invisible')
-    } else if (photoNr >= pictureArr.length - 1) {
-        photoNr = pictureArr.length - 1;
+    } else if (photoNr === pictureArr.length - 1) {
+        circleArrows[1].setAttribute('disabled', 'true');
         circleArrows[1].classList.add('opacity');
         angleArrows[1].classList.add('opacity');
+        angleArrows[1].setAttribute('disabled', 'true');
         nextMiniature.parentElement.classList.add('invisible')
     } else {
         circleArrows.forEach(circleArrow => circleArrow.classList.remove('opacity'));
+        circleArrows.forEach(circleArrow => circleArrow.removeAttribute('disabled'));
         angleArrows.forEach(angleArrow => angleArrow.classList.remove('opacity'));
+        angleArrows.forEach(circleArrow => circleArrow.removeAttribute('disabled'));
         prevMiniature.parentElement.classList.remove('invisible');
         nextMiniature.parentElement.classList.remove('invisible');
     }

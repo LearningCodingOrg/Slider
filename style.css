@@ -64,23 +64,33 @@ body {
     z-index: 1;
 }
 
-.fa-arrow-circle-left,
-.fa-arrow-circle-right {
+.btnAngle,
+.btnCircleArrow {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.btnCircleArrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 40px;
-    color: #444;
     background-color: #ccc;
-    opacity: .7;
+    opacity: .8;
     z-index: 2;
+
 }
 
-.fa-arrow-circle-left {
+.circleArrow {
+    font-size: 40px;
+    color: #000;
+}
+
+.btnLeft {
     left: 0;
 }
 
-.fa-arrow-circle-right {
+.btnRight {
     right: 0;
 }
 
