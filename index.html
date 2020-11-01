@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <button disabled class="btnAngle btnA-L opacity"><i class="fas fa-angle-left angleArrow "></i></button>
+        <div class="min invisible"><img class='prevMin' src="" alt=""></div>
+        <div class="min "><img class='currMin' src="" alt=""></div>
+        <div class="min "><img class='nextMin' src="" alt=""></div>
+        <button class="btnAngle btnA-R"><i class="fas fa-angle-right angleArrow"></i></button>
+    </div>
+
+    <div class="mainPhoto">
+        <button disabled class="btnCircleArrow btnLeft opacity"><i
+                class="fas fa-arrow-circle-left circleArrow "></i></button>
+        <img src="" alt="">
+        <button class="btnCircleArrow btnRight"><i class="fas fa-arrow-circle-right circleArrow"></i></button>
+    </div>
+
+    <p class="picturesInfo"><span class='currentDisplay'></span>/<span class="allPictures"></span></p>
+
+    <script src="logic.js"></script>
+</body>
+
+</html>
